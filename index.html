@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <title>Integrales en el calculo </title>
+</head>
+<body>
+    <header>
+        <label for="menu" class="material-symbols-outlined">menu</label>
+        <input id="menu" type="checkbox">
+        <nav class="navbar">
+            <ul>
+                <li><a href="#c1">¿Qué son las integrales?</a></li>
+                <li><a href="#c2">Integración Directa</a></li>
+                <li><a href="#c3">Integración por Sustitución</a></li>
+                <li><a href="#c4">Integración por Partes</a></li>
+                <li><a href="#c5">Integración por Sustitución Trigonométrica</a></li>
+                <li><a href="#c6">Integración por Fracciones Parciales</a></li>
+                <li><a href="#c7">Tabla de formulas</a></li>
+                <li><a href="#c8">Enlaces a las calculadoras</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        const checkbox = document.getElementById('menu');
+        const links = document.querySelectorAll('.navbar a');
+    
+        // Desmarcar el checkbox cuando se haga clic en cualquier enlace del menú
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                checkbox.checked = false; // Oculta el menú desmarcando el checkbox
+            });
+        });
+    </script>
+    <main>
+        <div id="c1" class="caja-concepto">
+            <h2>¿Qué son las integrales?</h2>
+            Las integrales son un concepto fundamental en el cálculo y las matemáticas, y pueden interpretarse de dos maneras principales:
+
+            1. Integral definida: Se utiliza para calcular el área bajo una curva en un intervalo específico. Si tienes una función \( f(x) \), la integral definida entre los límites \( a \) y \( b \) se denota como:
+            
+            \[
+            \int_{a}^{b} f(x) \, dx
+            \]
+
+            Esta operación nos da el área entre la curva de la función \( f(x) \), el eje \( x \), y las líneas verticales \( x = a \) y \( x = b \). Las integrales definidas tienen muchas aplicaciones, como en la física para calcular distancias, áreas, volúmenes y más.
+
+            2. Integral indefinida: Es el proceso inverso de la derivación y representa una familia de funciones. Se denota sin límites y tiene la forma:
+
+            \[
+            \int f(x) \, dx = F(x) + C
+            \]
+
+            Donde \( F(x) \) es la función original cuya derivada es \( f(x) \), y \( C \) es una constante de integración.
+
+            Las integrales tienen muchas aplicaciones prácticas en áreas como la física, la ingeniería, la economía, y son esenciales para resolver problemas relacionados con el cálculo de áreas, volúmenes, desplazamientos, trabajo, entre otros.
+
+            A continuación mostrare 5 métodos distintos para resolver integrales. 
+        </div>
+        <div id="c2" class="caja-concepto">
+            <h2>1. Integración Directa</h2>
+            <p>La <strong>integración directa</strong> se aplica cuando la integral es simple y puede resolverse utilizando las fórmulas básicas de integración.</p>
+            <p><strong>Fórmulas básicas:</strong></p>
+            <ul>
+                <li>\( \int x^n \, dx = \frac{x^{n+1}}{n+1} + C \) (para \( n \neq -1 \))</li>
+                <li>\( \int e^x \, dx = e^x + C \)</li>
+                <li>\( \int \sin(x) \, dx = -\cos(x) + C \)</li>
+            </ul>
+            <p><strong>Ejemplo:</strong></p>
+            <p>\( \int 3x^2 \, dx \)</p>
+            <p>Solución:</p>
+            <p>\( \int 3x^2 \, dx = x^3 + C \)</p>
+            <h3>Video de Ejemplo:</h3>
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/bzs9nJ3DYuI?si=ijvclIQO9yBX3uKQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div id="c3" class="caja-concepto">
+            <h2>2. Integración por Sustitución</h2>
+            <p>La <strong>integración por sustitución</strong> se usa cuando el integrando es el resultado de una función compuesta. Se introduce una nueva variable para simplificar la integral.</p>
+            <p><strong>Proceso:</strong></p>
+            <ol>
+                <li>Identifica una parte del integrando que puedas sustituir por una variable \( u \), de modo que su derivada también aparezca en la integral.</li>
+                <li>Sustituye \( u \) y reescribe la integral en términos de \( u \).</li>
+                <li>Integra y luego vuelve a la variable original.</li>
+            </ol>
+            <p><strong>Ejemplo:</strong></p>
+            <p>\( \int 2x e^{x^2} \, dx \)</p>
+            <p>Solución:</p>
+            <p>\( u = x^2 \), \( du = 2x \, dx \), luego \( \int e^u \, du = e^u + C = e^{x^2} + C \)</p>
+            <h3>Video de Ejemplo:</h3>
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xBRZnhCFcgM?si=5H9Y8As6WUSM1O1r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div id="c4" class="caja-concepto">
+            <h2>3. Integración por Partes</h2>
+            <p>La <strong>integración por partes</strong> se utiliza cuando el integrando es el producto de dos funciones, y es difícil aplicar integración directa o sustitución. Se basa en la fórmula:</p>
+            <p>\( \int u \, dv = u \cdot v - \int v \, du \)</p>
+            <p><strong>Ejemplo:</strong></p>
+            <p>\( \int x \cos(x) \, dx \)</p>
+            <p>Solución:</p>
+            <p>Sea \( u = x \) y \( dv = \cos(x) \, dx \), entonces:</p>
+            <p>\( \int x \cos(x) \, dx = x \sin(x) + \cos(x) + C \)</p>
+            <h3>Video de Ejemplo:</h3>
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6nu-snYlA0Q?si=_8ADB8Hf8Vizk2As" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div id="c5" class="caja-concepto">
+            <h2>4. Integración por Sustitución Trigonométrica</h2>
+            <p>La <strong>sustitución trigonométrica</strong> se usa cuando el integrando tiene expresiones cuadráticas como \( \sqrt{a^2 - x^2} \), \( \sqrt{a^2 + x^2} \), o \( \sqrt{x^2 - a^2} \). Se hacen sustituciones usando identidades trigonométricas.</p>
+            <p><strong>Sustituciones comunes:</strong></p>
+            <ul>
+                <li>Para \( \sqrt{a^2 - x^2} \), usa \( x = a \sin(\theta) \)</li>
+                <li>Para \( \sqrt{a^2 + x^2} \), usa \( x = a \tan(\theta) \)</li>
+                <li>Para \( \sqrt{x^2 - a^2} \), usa \( x = a \sec(\theta) \)</li>
+            </ul>
+            <p><strong>Ejemplo:</strong></p>
+            <p>\( \int \frac{dx}{\sqrt{4 - x^2}} \)</p>
+            <p>Solución:</p>
+            <p>Usando \( x = 2 \sin(\theta) \), la integral se convierte en \( \arcsin\left(\frac{x}{2}\right) + C \).</p>
+            <h3>Video de Ejemplo:</h3>
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jjqvOjQFnhI?si=8139nxOfTs2oCzz6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div id="c6" class="caja-concepto">
+            <h2>5. Integración por Fracciones Parciales</h2>
+                <p>La <strong>integración por fracciones parciales</strong> se aplica cuando el integrando es una fracción racional. Se descompone en fracciones más simples que puedan ser integradas por separado.</p>
+                <p><strong>Ejemplo:</strong></p>
+                <p>\( \int \frac{1}{x(x+1)} \, dx \)</p>
+                <p>Solución:</p>
+                <p>Descomponemos en fracciones parciales: \( \frac{1}{x(x+1)} = \frac{1}{x} - \frac{1}{x+1} \), luego:</p>
+                <p>\( \ln\left|\frac{x}{x+1}\right| + C \)</p>
+                <h3>Video de Ejemplo:</h3>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zTT-tZvYeOE?si=DUpqWySxOeeeb3BF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <br>
+Estos métodos cubren una amplia gama de técnicas utilizadas para resolver integrales en diferentes contextos. Cada uno tiene su propio conjunto de aplicaciones y es fundamental para abordar problemas más complejos en cálculo integral.
+<br>
+<br>
+A continuación te dejo una tabla con formulas base que te ayudaran a resolver integrales de una manera más sencilla.
+        </div>
+        <h2 id="c7">Tabla de Métodos de Integración</h2>
+
+        <table>
+            <tr>
+                <th>Integrales Polinomiales</th>
+            </tr>
+            <tr>
+                <td>\( \int dx = x + c \)</td>
+            </tr>
+            <tr>
+                <td>\( \int k \, dx = kx + c \)</td>
+            </tr>
+            <tr>
+                <td>\( \int k \, f(x) \, dx = k \int f(x) \, dx \)</td>
+            </tr>
+            <tr>
+                <td>\( \int (f(x) \pm g(x)) \, dx = \int f(x) \, dx \pm \int g(x) \, dx \)</td>
+            </tr>
+            <tr>
+                <td>\( \int x^n \, dx = \frac{x^{n+1}}{n+1} + c \)</td>
+            </tr>
+            <tr>
+                <td>\( \int x^{-1} \, dx = \ln|x| + c \)</td>
+            </tr>
+            <tr>
+                <th>Integrales Logarítmicas y Exponenciales</th>
+            </tr>
+            <tr>
+                <td>\( \int \log_a u \, du = \frac{u \ln(u) - u}{\ln a} + c \)</td>
+            </tr>
+            <tr>
+                <td>\( \int \ln u \, du = u \ln u - u + c \)</td>
+            </tr>
+            <tr>
+                <td>\( \int a^u \, du = \frac{a^u}{\ln a} + c \)</td>
+            </tr>
+            <tr>
+                <td>\( \int e^u \, du = e^u + c \)</td>
+            </tr>
+            <tr>
+                <th>Integrales Trigonométricas Básicas</th>
+            </tr>
+            <tr>
+                <td>\( \int \sin u \, du = -\cos u + c \)</td>
+            </tr>
+            <tr>
+                <td>\( \int \cos u \, du = \sin u + c \)</td>
+            </tr>
+            <tr>
+                <td>\( \int \tan u \, du = -\ln |\cos u| + c \)</td>
+            </tr>
+            <tr>
+                <td>\( \int \cot u \, du = \ln |\sin u| + c \)</td>
+            </tr>
+            <tr>
+                <td>\( \int \sec u \, du = \ln |\sec u + \tan u| + c \)</td>
+            </tr>
+            <tr>
+                <td>\( \int \csc u \, du = \ln |\csc u - \cot u| + c \)</td>
+            </tr>
+        </table>
+        <div id="c8" class="caja-concepto">
+            <h2>Links a calculadoras de integrales y software CAS</h2>
+            <ul>
+                <li><a href="https://www.geogebra.org/cas?lang=es" target="_blank">Geogebra CAS</a></li>
+                <li><a href="https://www.calculadora-de-integrales.com/">Calculadora de integrales</a></li>
+                <li><a href="https://www.desmos.com/scientific?lang=es">Desmos</a></li>
+                <li><a href="https://es.symbolab.com/solver/definite-integral-calculator">Symbolab</a></li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>
+            CECYTEM Plantel Jilotepec
+            <br>
+            Materia:Cálculo Integral.               Alvaro Martinez Miranda. 2024
+        </p>    
+    </footer>
+</body>
+</html>

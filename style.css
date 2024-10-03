@@ -1,0 +1,137 @@
+body{
+    --fondo: #172b3f;
+    --fondo-cajas: #1b2630;
+    --bordes: #25cc1f;
+    --blanco-letra: #e9f3fd;
+    background-color: var(--fondo);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+/* Tabla de métodos de integración */
+table {
+    width: 98%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    border: 2px solid #1E90FF;
+    border-radius: 10px; 
+    overflow: hidden;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.459);
+}
+th, td {
+    border: 1px solid var(--fondo);
+    padding: 8px;
+    text-align: center;
+    color: var(--blanco-letra);
+}
+td{
+    color: #292C30;
+}
+tr:nth-child(2n){
+    background-color: #d5dce6;
+}
+tr{
+    background-color: var(--blanco-letra);
+}
+th {
+    background-color: var(--fondo);
+    font-size: 1.2rem;
+}
+
+/* Encabezados */
+h1,h2{
+    color: var(--blanco-letra);
+    text-align: center;
+}
+.encabezado{
+    color: var(--fondo);
+}
+/* .espacio{
+    margin-bottom: 3rem;
+    width: 100%;
+    opacity: 0;
+} */
+header{
+    background-color: #172b3fc0;
+    backdrop-filter: blur(50px);
+    position: fixed;
+    width: 100%;
+    text-align: right;
+    z-index: 10;
+    /* box-shadow: 0 0 15px 5px #49586694; */
+}
+header label{
+    font-size: 5rem;
+    color: var(--blanco-letra);
+    margin: 10px 23px;
+    padding: 5px;
+    border: 1px solid var(--blanco-letra);
+    border-radius: 5px;
+}
+
+/* cajas de concepto */
+
+.caja-concepto{
+    background-color: var(--fondo-cajas);
+    color: var(--blanco-letra);
+    border-left: 5px solid var(--bordes);
+    border-radius: 10px;
+    margin: 0 20px 20px 20px;
+    padding: 20px;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.459);
+}
+
+.caja-concepto h2{
+    color: var(--blanco-letra);
+    margin-top: 2.2rem;
+}
+
+a{
+    color: var(--blanco-letra);
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-style: italic;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+footer, footer h2{
+    margin-top: 40px;
+    background-color: var(--fondo-cajas);
+    color: var(--blanco-letra);
+    text-align: left;
+    padding: 30px;
+    font-weight: bold;
+}
+
+/* navbar */
+
+.navbar{
+    width: 100%;
+    height: 100dvh;
+    place-items: center;
+    position: fixed;
+    background-color: var(--fondo);
+    z-index: 10;
+    display: none;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ .navbar {
+    display: grid;
+}
+
+ul, li{
+    list-style: decimal;
+    color: var(--blanco-letra);
+    margin: 20px;
+    text-align: left;
+}
+
+
